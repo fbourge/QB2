@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1415782080 source:/home/olaf/Programme/oled/main.c
+	<stdio.h>
+	<stdint.h>
+	<fcntl.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<time.h>
+	<sys/ioctl.h>
+	<linux/i2c-dev.h>
+	"ssd1306.h"
+
+1415700286 /home/olaf/Programme/oled/ssd1306.h
+
+1415703521 source:/home/olaf/Programme/oled/ssd1306.c
+	<errno.h>
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<unistd.h>
+	<linux/i2c-dev.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<time.h>
+	"font_12x16.h"
+	"font_6x8.h"
+	"ssd1306.h"
+
+1415696873 /home/olaf/Programme/oled/font_12x16.h
+
+1415699839 /home/olaf/Programme/oled/font_6x8.h
+

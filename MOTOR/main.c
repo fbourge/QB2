@@ -1,3 +1,17 @@
+/************************************************************************************************
+    *                                                                                           *
+    * Author:  Florentin, Bourge                                                                *
+    *                                                                                           *
+    * Inspired by : likeaferrari.wordpress.com/2013/12/02/simple-gpio-example-with-cubieboard2/ *
+    *                                                                                           *
+    *                                                                                           *
+    * Purpose:  Generate PWM on a Cubieboard v2 GPIO (gpio1 pin3 default)                       *
+    *                                                                                           *
+    * Usage:                                                                                    *
+    *      run the programm with frequency and duty cycle passed in arguments                   *
+    ********************************************************************************************/
+
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

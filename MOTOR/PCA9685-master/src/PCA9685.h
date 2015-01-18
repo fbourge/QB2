@@ -24,6 +24,7 @@
 #ifndef _PCA9685_H
 #define _PCA9685_H
 #include <inttypes.h>
+#include "I2C.h"
 
 // Register Definitions
 

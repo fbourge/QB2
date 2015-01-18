@@ -74,34 +74,42 @@ if ((fp = fopen("/sys/class/gpio/gpio1_pg3/value","rb+"))==NULL)
 
 	
 
+int i=0, k=0;
 
-while(1)
-{
-if((fp = fopen("/sys/class/gpio/gpio1_pg3/value", "rb+")) == NULL)
+for(k=-5;k<5;k++){
+i=0;
+float duty = ((float)k/10)+5;
+timeOn = (duty/100)*period;
+timeOff = period - timeOn;
+printf("Frequency = %d, Period = %d µs and Duty Cycle = %f,  Time ON = %d, Time OFF = %d \n",freq, period, dutyCycle, timeOn, timeOff); 
+	for(i=0;i<100;i++)
 	{
-		printf("Cannot open value file \n");
-		exit(1);
-	}
-		rewind(fp);
-		
-		strcpy(set_value,"1");
-		fwrite(&set_value, sizeof(char), 1,fp);
-		fclose(fp);
-		usleep(timeOn);
+	if((fp = fopen("/sys/class/gpio/gpio1_pg3/value", "rb+")) == NULL)
+		{
+			printf("Cannot open value file \n");
+			exit(1);
+		}
+			rewind(fp);
+			
+			strcpy(set_value,"1");
+			fwrite(&set_value, sizeof(char), 1,fp);
+			fclose(fp);
+			usleep(timeOn);
 
 
-		if((fp = fopen("/sys/class/gpio/gpio1_pg3/value", "rb+")) == NULL)
-	{
-		printf("Cannot open value file \n");
-		exit(1);
-	}
-		rewind(fp);
-		
-		strcpy(set_value,"0");
-		fwrite(&set_value, sizeof(char), 1,fp);
-		fclose(fp);
-		usleep(timeOff);
-		
+			if((fp = fopen("/sys/class/gpio/gpio1_pg3/value", "rb+")) == NULL)
+		{
+			printf("Cannot open value file \n");
+			exit(1);
+		}
+			rewind(fp);
+			
+			strcpy(set_value,"0");
+			fwrite(&set_value, sizeof(char), 1,fp);
+			fclose(fp);
+			usleep(timeOff);
+			
+		}
 	}
 	return 0;
 
